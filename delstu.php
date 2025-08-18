@@ -1,9 +1,9 @@
 <?php
-$email = $_GET["email"];
+$email    = filter_var($_GET["email"], FILTER_SANITIZE_EMAIL);
 $server   = "localhost";
-$user = "root";
-$pass = "";
-$db = "lms";
+$user     = "root";
+$pass     = "";
+$db       = "lms";
 
 try {
     $sqlconn = new PDO("mysql:host=$server;dbname=$db", $user, $pass);
